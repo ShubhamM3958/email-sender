@@ -13,6 +13,9 @@ This is an automated email sender that sends bulk emails using Python. It suppor
 ## Folder Structure
     email-sender
       ├── vaildate_mail                 # Folder for email validation scripts
+      │   ├── templates
+      │   │   ├── index.html
+      │   └── app.py
       ├── CCC-Bulk-LATE.xlsx            # Sample Excel file with recipient data 
       ├── bulk_bcc.py                   # Main script for sending bulk emails 
       ├── mailer.py                     # Individual email sending
