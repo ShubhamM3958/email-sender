@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-lg">
+                    <div class="card-body">
+                        <h1 class="card-title text-center mb-4">Email Validation</h1>
+
+                        <!-- Form for email input -->
+                        <form method="GET">
+                            <div class="form-group">
+                                <label for="email">Enter your email address:</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">Validate Email</button>
+                            </div>
+                        </form>
+
+                        <!-- Result display -->
+                        {% if result %}
+                            <div class="card mt-4 p-3 {{ 'bg-success text-white' if result.is_valid else 'bg-danger text-white' }}">
+                                <h2 class="card-title">Result for {{ result.email }}:</h2>
+                                <p class="card-text">{{ result.message }}</p>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

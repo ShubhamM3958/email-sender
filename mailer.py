@@ -20,6 +20,7 @@ def load_html_template(template_file):
         html_content = file.read()
     return html_content
 
+
 # Function to send individual emails
 def send_email(to_email, html_content, subject, email_sender, email_password):
     server = smtplib.SMTP(smtp_server, smtp_port)
@@ -43,6 +44,7 @@ def send_email(to_email, html_content, subject, email_sender, email_password):
         print(f'Failed to send email to {to_email}. Error: {str(e)}')
         server.quit()
         return False
+
 
 # Main function to process and send emails
 def process_emails(input_file, remaining_file, invited_file, html_template_file, email_sender, email_password, subject):
@@ -112,16 +114,12 @@ def process_emails(input_file, remaining_file, invited_file, html_template_file,
         remaining_df.to_excel(remaining_file, index=False)
         print(f'Remaining email list saved to {remaining_file}')
 
+
 # Example usage
 if __name__ == "__main__":
     subject = ("Invitation for Campus Placement Drives for YOP 2025 students | Guru Jambheswhar University ("
                "Hisar)")
-    # from_email = "shubhammalhotra92890@gmail.com"
     from_email = 'gju.tpoffice@gmail.com'
-    # password = "szzr qhgm fslu qpmd"
-    password = 'rhvm vsie jgmn kbiv' # tp
+    password = '<tpoffice password>'  # contact me for this
     template_file = "email_template.html"
-
-    # process_emails(input_file, remaining_file, invited_file, from_email, password, template_file, subject)
     process_emails(input_file, remaining_file, invited_file, template_file, from_email, password, subject)
-    # send_email(subject, to_email, from_email, password, template_file, template_vars)

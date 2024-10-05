@@ -3,6 +3,8 @@ import pandas as pd
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import os
+from dotenv import load_dotenv
+
 
 # File paths
 input_file = 'CCC-Bulk-LATE.xlsx'
@@ -11,12 +13,12 @@ invited_file = 'Invited-CCC-Bulk-LATE.xlsx'
 html_template_file = 'email_template.html'
 
 # Email settings
-# email_sender = 'shubhammalhotra92890@gmail.com'
 email_sender = 'gju.tpoffice@gmail.com'
-# email_password = 'szzr qhgm fslu qpmd'
-email_password = 'rhvm vsie jgmn kbiv'  # tpcell
+password = '<tpoffice password>'  # contact me for this
 smtp_server = 'smtp.gmail.com'
 smtp_port = 587
+
+load_dotenv()  # load env password
 
 to_addresses = ['tpcell@gjust.org']
 custom_bcc = ['tpcell@gjust.org', 'shubham.polar@gmail.com']
@@ -53,12 +55,13 @@ def load_html_template(template_file):
         html_content = file.read()
     return html_content
 
+
 # Function to send emails
 def send_emails(email_list, html_content):
     # Set up the SMTP server
     server = smtplib.SMTP(smtp_server, smtp_port)
     server.starttls()
-    server.login(email_sender, email_password)
+    server.login(email_sender, password)
 
     # Email content
     subject = ("Invitation for Campus Placement Drives for YOP 2025 students | Guru Jambheswhar University ("
@@ -81,26 +84,6 @@ def send_emails(email_list, html_content):
         print(f'Failed to send email. Error: {str(e)}')
         server.quit()
         return []
-    # sent_emails = []
-
-    # # Send email to each recipient in BCC
-    # for email in email_list:
-    #     msg = MIMEMultipart()
-    #     msg['From'] = email_sender
-    #     msg['To'] = ', '.join(to_addresses)
-    #     msg['Subject'] = subject
-    #     msg.attach(MIMEText(html_content, 'html'))
-    #
-    #     try:
-    #         # Send email using BCC
-    #         server.sendmail(email_sender, email, msg.as_string())
-    #         print(f'Email sent to: {email}')
-    #         sent_emails.append(email)
-    #     except Exception as e:
-    #         print(f'Failed to send email to: {email}. Error: {str(e)}')
-
-
-    # return sent_emails
 
 
 html_template = load_html_template(html_template_file)
