@@ -21,10 +21,23 @@ This is an automated email sender that sends bulk emails using Python. It suppor
       ├── requirements.txt # Required Python packages 
       └── README.md # Documentation for the project
 
-## Requirements
+## Installation
+* Clone the repository:
+  ```bash
+  git clone https://github.com/ShubhamM3958/email-sender.git
+  cd email-sender
 
-To install the necessary dependencies, run:
+* Install the dependencies:
+ ```bash
+  pip install -r requirements.txt
+```
 
-```bash
-pip install -r requirements.txt
-    
+## Usage
+* Run the script:
+  ```bash
+  python mailer.py
+  ```
+    or
+  ```bash
+  python bulk_cc.py
+  ```
