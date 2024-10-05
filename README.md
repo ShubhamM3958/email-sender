@@ -12,14 +12,14 @@ This is an automated email sender that sends bulk emails using Python. It suppor
 
 ## Folder Structure
     email-sender
-      ├── vaildate_mail # Folder for email validation scripts
-      ├── CCC-Bulk-LATE.xlsx # Sample Excel file with recipient data 
-      ├── bulk_bcc.py # Main script for sending bulk emails 
-      ├── mailer.py # Individual email sending
-      ├── email_template.html # HTML email template for personalized emails 
-      ├── .gitignore # Gitignore file to exclude unnecessary files (e.g., .env) 
-      ├── requirements.txt # Required Python packages 
-      └── README.md # Documentation for the project
+      ├── vaildate_mail                 # Folder for email validation scripts
+      ├── CCC-Bulk-LATE.xlsx            # Sample Excel file with recipient data 
+      ├── bulk_bcc.py                   # Main script for sending bulk emails 
+      ├── mailer.py                     # Individual email sending
+      ├── email_template.html           # HTML email template for personalized emails 
+      ├── .gitignore                    # Gitignore file to exclude unnecessary files (e.g., .env) 
+      ├── requirements.txt              # Required Python packages 
+      └── README.md                     # Documentation for the project
 
 ## Installation
 * Clone the repository:
